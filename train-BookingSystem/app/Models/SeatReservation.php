@@ -14,8 +14,20 @@ class SeatReservation extends Model
         return $this->belongsTo(Seat::class);
     }
 
+    public function trip()
+    {
+        return $this->belongsTo(Trip::class);
+    }
+
     public function booking()
     {
         $this->belongsTo(Booking::class);
     }
+
+    public function users()
+{
+    return $this->belongsToMany(User::class);
+}
+
+
 }
